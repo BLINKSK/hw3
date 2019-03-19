@@ -1,0 +1,688 @@
+1.把附件图像的直方图画出；
+clear;
+[p,map]=imread('lena.bmp');
+map(end+1:256,:)=0;
+a=ind2gray(p,map);
+figure(1)
+subplot(2,2,1);
+imhist(a);
+title('lena.bmp的直方图');
+[p1,map]=imread('lena1.bmp');
+map(end+1:256,:)=0;
+a1=ind2gray(p1,map);
+subplot(2,2,2);
+imhist(a1);
+title('lena1.bmp的直方图');
+[p2,map]=imread('lena2.bmp');
+map(end+1:256,:)=0;
+a2=ind2gray(p2,map);
+subplot(2,2,3);
+imhist(a2);
+title('lena2.bmp的直方图');
+[p3,map]=imread('lena4.bmp');
+map(end+1:256,:)=0;
+a3=ind2gray(p3,map);
+subplot(2,2,4);
+imhist(a3);
+title('lena4.bmp的直方图');
+
+clear;
+[p,map]=imread('elain.bmp');
+map(end+1:256,:)=0;
+a=ind2gray(p,map);
+figure(2)
+subplot(2,2,1);
+imhist(a);
+title('elain.bmp的直方图');
+[p1,map]=imread('elain1.bmp');
+map(end+1:256,:)=0;
+a1=ind2gray(p1,map);
+subplot(2,2,2);
+imhist(a1);
+title('elain1.bmp的直方图');
+[p2,map]=imread('elain2.bmp');
+map(end+1:256,:)=0;
+a2=ind2gray(p2,map);
+subplot(2,2,3);
+imhist(a2);
+title('elain2.bmp的直方图');
+[p3,map]=imread('elain3.bmp');
+map(end+1:256,:)=0;
+a3=ind2gray(p3,map);
+subplot(2,2,4);
+imhist(a3);
+title('elain3.bmp的直方图');
+
+clear;
+[p,map]=imread('woman.bmp');
+map(end+1:256,:)=0;
+a=ind2gray(p,map);
+figure(3)
+subplot(2,2,1);
+imhist(a);
+title('woman.bmp的直方图');
+[p1,map]=imread('woman1.bmp');
+map(end+1:256,:)=0;
+a1=ind2gray(p1,map);
+subplot(2,2,2);
+imhist(a1);
+title('woman1.bmp的直方图');
+[p2,map]=imread('woman2.bmp');
+map(end+1:256,:)=0;
+a2=ind2gray(p2,map);
+subplot(2,2,3);
+imhist(a2);
+title('woman2.bmp的直方图');
+
+clear;
+[p,map]=imread('citywall.bmp');
+map(end+1:256,:)=0;
+a=ind2gray(p,map);
+figure(4)
+subplot(2,2,1);
+imhist(a);
+title('citywall.bmp的直方图');
+[p1,map]=imread('citywall1.bmp');
+map(end+1:256,:)=0;
+a1=ind2gray(p1,map);
+subplot(2,2,2);
+imhist(a1);
+title('citywall1.bmp的直方图');
+[p2,map]=imread('citywall2.bmp');
+map(end+1:256,:)=0;
+a2=ind2gray(p2,map);
+subplot(2,2,3);
+imhist(a2);
+title('citywall2.bmp的直方图');
+
+2.把所有图像进行直方图均衡；输出均衡后的图像和源图像进行比对；分析改善内容；
+clear;
+[p, map]=imread( 'citywall.bmp') ;
+map(end+1:256,:)=0;
+a=ind2gray (p,map) ;
+figure(1)
+subplot (2,2,1) ; 
+imshow(a);
+title('citywall.bmp原图像');
+subplot (2,2,2) ; 
+imhist (a);
+title('citywall.bmp的直方图');
+i=histeq(a) ;
+subplot (2,2,3) ; 
+imshow (i);
+title('经过直方图均衡化的citywall.bmp图像');
+subplot (2,2,4) ; 
+imhist (i);
+title('经过直方图均衡化的citywall.bmp的直方图');
+
+
+clear;
+[p, map]=imread( 'citywall1.bmp') ;
+map(end+1:256,:)=0;
+a=ind2gray (p,map) ;
+figure(2)
+subplot (2,2,1) ; 
+imshow(a);
+title('citywall1.bmp原图像');
+subplot (2,2,2) ; 
+imhist (a);
+title('citywall1.bmp的直方图');
+i=histeq(a) ;
+subplot (2,2,3) ; 
+imshow (i);
+title('经过直方图均衡化的citywall1.bmp图像');
+subplot (2,2,4) ; 
+imhist (i);
+title('经过直方图均衡化的citywall1.bmp的直方图');
+
+
+clear;
+[p, map]=imread( 'citywall2.bmp') ;
+map(end+1:256,:)=0;
+a=ind2gray (p,map) ;
+figure(3)
+subplot (2,2,1) ; 
+imshow(a);
+title('citywall2.bmp原图像');
+subplot (2,2,2) ; 
+imhist (a);
+title('citywall2.bmp的直方图');
+i=histeq(a) ;
+subplot (2,2,3) ; 
+imshow (i);
+title('经过直方图均衡化的citywall2.bmp图像');
+subplot (2,2,4) ; 
+imhist (i);
+title('经过直方图均衡化的citywall2.bmp的直方图');
+
+clear;
+[p, map]=imread( 'lena.bmp') ;
+map(end+1:256,:)=0;
+a=ind2gray (p,map) ;
+figure(4)
+subplot (2,2,1) ; 
+imshow(a);
+title('lena.bmp原图像');
+subplot (2,2,2) ; 
+imhist (a);
+title('lena.bmp的直方图');
+i=histeq(a) ;
+subplot (2,2,3) ; 
+imshow (i);
+title('经过直方图均衡化的lena.bmp图像');
+subplot (2,2,4) ; 
+imhist (i);
+title('经过直方图均衡化的lena.bmp的直方图');
+
+clear;
+[p, map]=imread( 'lena1.bmp') ;
+map(end+1:256,:)=0;
+a=ind2gray (p,map) ;
+figure(5)
+subplot (2,2,1) ; 
+imshow(a);
+title('lena1.bmp原图像');
+subplot (2,2,2) ; 
+imhist (a);
+title('lena1.bmp的直方图');
+i=histeq(a) ;
+subplot (2,2,3) ; 
+imshow (i);
+title('经过直方图均衡化的lena1.bmp图像');
+subplot (2,2,4) ; 
+imhist (i);
+title('经过直方图均衡化的lena1.bmp的直方图');
+
+clear;
+[p, map]=imread( 'lena2.bmp') ;
+map(end+1:256,:)=0;
+a=ind2gray (p,map) ;
+figure(6)
+subplot (2,2,1) ; 
+imshow(a);
+title('lena2.bmp原图像');
+subplot (2,2,2) ; 
+imhist (a);
+title('lena2.bmp的直方图');
+i=histeq(a) ;
+subplot (2,2,3) ; 
+imshow (i);
+title('经过直方图均衡化的lena2.bmp图像');
+subplot (2,2,4) ; 
+imhist (i);
+title('经过直方图均衡化的lena2.bmp的直方图');
+
+clear;
+[p, map]=imread( 'lena4.bmp') ;
+map(end+1:256,:)=0;
+a=ind2gray (p,map) ;
+figure(7)
+subplot (2,2,1) ; 
+imshow(a);
+title('lena4.bmp原图像');
+subplot (2,2,2) ; 
+imhist (a);
+title('lena4.bmp的直方图');
+i=histeq(a) ;
+subplot (2,2,3) ; 
+imshow (i);
+title('经过直方图均衡化的lena4.bmp图像');
+subplot (2,2,4) ; 
+imhist (i);
+title('经过直方图均衡化的lena4.bmp的直方图');
+
+clear;
+[p, map]=imread( 'elain.bmp') ;
+map(end+1:256,:)=0;
+a=ind2gray (p,map) ;
+figure(8)
+subplot (2,2,1) ; 
+imshow(a);
+title('elain.bmp原图像');
+subplot (2,2,2) ; 
+imhist (a);
+title('elain.bmp的直方图');
+i=histeq(a) ;
+subplot (2,2,3) ; 
+imshow (i);
+title('经过直方图均衡化的elain.bmp图像');
+subplot (2,2,4) ; 
+imhist (i);
+title('经过直方图均衡化的elain.bmp的直方图');
+
+clear;
+[p, map]=imread( 'elain1.bmp') ;
+map(end+1:256,:)=0;
+a=ind2gray (p,map) ;
+figure(9)
+subplot (2,2,1) ; 
+imshow(a);
+title('elain1.bmp原图像');
+subplot (2,2,2) ; 
+imhist (a);
+title('elain1.bmp的直方图');
+i=histeq(a) ;
+subplot (2,2,3) ; 
+imshow (i);
+title('经过直方图均衡化的elain1.bmp图像');
+subplot (2,2,4) ; 
+imhist (i);
+title('经过直方图均衡化的elain1.bmp的直方图');
+
+clear;
+[p, map]=imread( 'elain2.bmp') ;
+map(end+1:256,:)=0;
+a=ind2gray (p,map) ;
+figure(10)
+subplot (2,2,1) ; 
+imshow(a);
+title('elain2.bmp原图像');
+subplot (2,2,2) ; 
+imhist (a);
+title('elain2.bmp的直方图');
+i=histeq(a) ;
+subplot (2,2,3) ; 
+imshow (i);
+title('经过直方图均衡化的elain2.bmp图像');
+subplot (2,2,4) ; 
+imhist (i);
+title('经过直方图均衡化的elain2.bmp的直方图');
+
+clear;
+[p, map]=imread( 'elain3.bmp') ;
+map(end+1:256,:)=0;
+a=ind2gray (p,map) ;
+figure(11)
+subplot (2,2,1) ; 
+imshow(a);
+title('elain3.bmp原图像');
+subplot (2,2,2) ; 
+imhist (a);
+title('elain3.bmp的直方图');
+i=histeq(a) ;
+subplot (2,2,3) ; 
+imshow (i);
+title('经过直方图均衡化的elain3.bmp图像');
+subplot (2,2,4) ; 
+imhist (i);
+title('经过直方图均衡化的elain3.bmp的直方图');
+
+clear;
+[p, map]=imread( 'woman.bmp') ;
+map(end+1:256,:)=0;
+a=ind2gray (p,map) ;
+figure(12)
+subplot (2,2,1) ; 
+imshow(a);
+title('woman.bmp原图像');
+subplot (2,2,2) ; 
+imhist (a);
+title('woman.bmp的直方图');
+i=histeq(a) ;
+subplot (2,2,3) ; 
+imshow (i);
+title('经过直方图均衡化的woman.bmp图像');
+subplot (2,2,4) ; 
+imhist (i);
+title('经过直方图均衡化的woman.bmp的直方图');
+
+clear;
+[p, map]=imread( 'woman1.bmp') ;
+map(end+1:256,:)=0;
+a=ind2gray (p,map) ;
+figure(13)
+subplot (2,2,1) ; 
+imshow(a);
+title('woman1.bmp原图像');
+subplot (2,2,2) ; 
+imhist (a);
+title('woman1.bmp的直方图');
+i=histeq(a) ;
+subplot (2,2,3) ; 
+imshow (i);
+title('经过直方图均衡化的woman1.bmp图像');
+subplot (2,2,4) ; 
+imhist (i);
+title('经过直方图均衡化的woman1.bmp的直方图');
+
+clear;
+[p, map]=imread( 'woman2.bmp') ;
+map(end+1:256,:)=0;
+a=ind2gray (p,map) ;
+figure(14)
+subplot (2,2,1) ; 
+imshow(a);
+title('woman2.bmp原图像');
+subplot (2,2,2) ; 
+imhist (a);
+title('woman2.bmp的直方图');
+i=histeq(a) ;
+subplot (2,2,3) ; 
+imshow (i);
+title('经过直方图均衡化的woman2.bmp图像');
+subplot (2,2,4) ; 
+imhist (i);
+title('经过直方图均衡化的woman2.bmp的直方图');
+
+3.进一步把图像按照对源图像直方图的观察，各自自行指定不同源图像的直方图，进行直方图匹配，进行图像增强；
+[p, map]=imread( 'citywall.bmp') ;
+a=imhist (p);
+[p1, map]=imread( 'citywall1.bmp') ;
+map(end+1:256,:)=0;
+a1=ind2gray (p1,map) ;
+b1=histeq(a1,a);
+figure(1);
+subplot (2,2,1) ; 
+imshow(a1);
+title('citywall1.bmp原图像');
+subplot (2,2,2) ; 
+imhist(a1);
+title('citywall1.bmp原始直方图');
+subplot (2,2,3) ; 
+imshow(b1);
+title('经过直方图匹配的citywall1.bmp图像');
+subplot (2,2,4) ; 
+imhist(b1);
+title('经过直方图匹配的citywall1.bmp的直方图');
+[p2, map]=imread( 'citywall2.bmp') ;
+map(end+1:256,:)=0;
+a2=ind2gray (p2,map) ;
+b2=histeq(a2,a);
+figure(2)
+subplot (2,2,1) ; 
+imshow(a2);
+title('citywall2.bmp原图像');
+subplot (2,2,2) ; 
+imhist(a2);
+title('citywall2.bmp原始直方图');
+subplot (2,2,3) ; 
+imshow(b2);
+title('经过直方图匹配的citywall2.bmp图像');
+subplot (2,2,4) ; 
+imhist(b2);
+title('经过直方图匹配的citywall2.bmp的直方图');
+
+[p, map]=imread( 'woman.bmp') ;
+a=imhist (p);
+[p1, map]=imread( 'woman1.bmp') ;
+map(end+1:256,:)=0;
+a1=ind2gray (p1,map) ;
+b1=histeq(a1,a);
+figure(3);
+subplot (2,2,1) ; 
+imshow(a1);
+title('woman1.bmp原图像');
+subplot (2,2,2) ; 
+imhist(a1);
+title('woman1.bmp原始直方图');
+subplot (2,2,3) ; 
+imshow(b1);
+title('经过直方图匹配的woman1.bmp图像');
+subplot (2,2,4) ; 
+imhist(b1);
+title('经过直方图匹配的woman1.bmp的直方图');
+[p2, map]=imread( 'woman2.bmp') ;
+map(end+1:256,:)=0;
+a2=ind2gray (p2,map) ;
+b2=histeq(a2,a);
+figure(4)
+subplot (2,2,1) ; 
+imshow(a2);
+title('woman2.bmp原图像');
+subplot (2,2,2) ; 
+imhist(a2);
+title('woman2.bmp原始直方图');
+subplot (2,2,3) ; 
+imshow(b2);
+title('经过直方图匹配的woman2.bmp图像');
+subplot (2,2,4) ; 
+imhist(b2);
+title('经过直方图匹配的woman2.bmp的直方图');
+
+[p, map]=imread( 'lena.bmp') ;
+a=imhist (p);
+[p1, map]=imread( 'lena1.bmp') ;
+map(end+1:256,:)=0;
+a1=ind2gray (p1,map) ;
+b1=histeq(a1,a);
+figure(5);
+subplot (2,2,1) ; 
+imshow(a1);
+title('lena1.bmp原图像');
+subplot (2,2,2) ; 
+imhist(a1);
+title('lena1.bmp原始直方图');
+subplot (2,2,3) ; 
+imshow(b1);
+title('经过直方图匹配的lena1.bmp图像');
+subplot (2,2,4) ; 
+imhist(b1);
+title('经过直方图匹配的lena1.bmp的直方图');
+[p2, map]=imread( 'lena2.bmp') ;
+map(end+1:256,:)=0;
+a2=ind2gray (p2,map) ;
+b2=histeq(a2,a);
+figure(6)
+subplot (2,2,1) ; 
+imshow(a2);
+title('lena2.bmp原图像');
+subplot (2,2,2) ; 
+imhist(a2);
+title('lena2.bmp原始直方图');
+subplot (2,2,3) ; 
+imshow(b2);
+title('经过直方图匹配的lena2.bmp图像');
+subplot (2,2,4) ; 
+imhist(b2);
+title('经过直方图匹配的lena2.bmp的直方图');
+
+[p2, map]=imread( 'lena4.bmp') ;
+map(end+1:256,:)=0;
+a2=ind2gray (p2,map) ;
+b2=histeq(a2,a);
+figure(7)
+subplot (2,2,1) ; 
+imshow(a2);
+title('lena4.bmp原图像');
+subplot (2,2,2) ; 
+imhist(a2);
+title('lena4.bmp原始直方图');
+subplot (2,2,3) ; 
+imshow(b2);
+title('经过直方图匹配的lena4.bmp图像');
+subplot (2,2,4) ; 
+imhist(b2);
+title('经过直方图匹配的lena4.bmp的直方图');
+
+
+[p, map]=imread( 'elain.bmp') ;
+a=imhist (p);
+[p1, map]=imread( 'elain1.bmp') ;
+map(end+1:256,:)=0;
+a1=ind2gray (p1,map) ;
+b1=histeq(a1,a);
+figure(8);
+subplot (2,2,1) ; 
+imshow(a1);
+title('elain1.bmp原图像');
+subplot (2,2,2) ; 
+imhist(a1);
+title('elain1.bmp原始直方图');
+subplot (2,2,3) ; 
+imshow(b1);
+title('经过直方图匹配的elain1.bmp图像');
+subplot (2,2,4) ; 
+imhist(b1);
+title('经过直方图匹配的elain1.bmp的直方图');
+[p2, map]=imread( 'elain2.bmp') ;
+map(end+1:256,:)=0;
+a2=ind2gray (p2,map) ;
+b2=histeq(a2,a);
+figure(9)
+subplot (2,2,1) ; 
+imshow(a2);
+title('elain2.bmp原图像');
+subplot (2,2,2) ; 
+imhist(a2);
+title('elain2.bmp原始直方图');
+subplot (2,2,3) ; 
+imshow(b2);
+title('经过直方图匹配的elain2.bmp图像');
+subplot (2,2,4) ; 
+imhist(b2);
+title('经过直方图匹配的elain2.bmp的直方图');
+
+[p2, map]=imread( 'elain3.bmp') ;
+map(end+1:256,:)=0;
+a2=ind2gray (p2,map) ;
+b2=histeq(a2,a);
+figure(10)
+subplot (2,2,1) ; 
+imshow(a2);
+title('elain3.bmp原图像');
+subplot (2,2,2) ; 
+imhist(a2);
+title('elain3.bmp原始直方图');
+subplot (2,2,3) ; 
+imshow(b2);
+title('经过直方图匹配的elain3.bmp图像');
+subplot (2,2,4) ; 
+imhist(b2);
+title('经过直方图匹配的elain3.bmp的直方图');
+
+4.对elain和lena图像进行7*7的局部直方图增强；
+clear;
+p=imread('elain.bmp'); %读取图像
+figure(1)
+imshow(p);
+title('elain.bmp原始图象'); %显示原始图象
+x=7;%建立模板
+a(1:x,1:x)=1; %模板小于图像
+image=wextend('2D','sym',p,x);%%扩展
+image1=image;
+[m,n]=size(image);%%扩展后的图像大小
+w=double(image);
+jubu_image=w;
+for i=x+1:m-x
+for j=x+1:n-x
+m1=w(i:i+(x-1),j:j+(x-1)).*a(1:x,1:x); %取出w1中从(i,j)开始的x行x列元素与模板相乘
+ k=histeq(uint8(m1));%对局部进行直方图均衡
+ y=double(k);
+ jubu_image(i,j)=y(4,4); %将均衡后中心点的像素值赋给原图对应点的元素，未被赋值的元素取原值
+ end
+end
+Picture=jubu_image(x+1:m-x,x+1:n-x);%均衡化后，取原图像大小
+Picture=uint8(Picture);
+figure(2)
+imshow(Picture);
+title('局部直方图均衡后的elain图像'); %显示均衡后的图象
+
+
+clear;
+p=imread('lena.bmp'); %读取图像
+figure(3)
+imshow(p);
+title('lena.bmp原始图象'); %显示原始图象
+x=7;%建立模板
+a(1:x,1:x)=1; %模板小于图像
+image=wextend('2D','sym',p,x);%%扩展
+image1=image;
+[m,n]=size(image);%%扩展后的图像大小
+w=double(image);
+jubu_image=w;
+for i=x+1:m-x
+for j=x+1:n-x
+m1=w(i:i+(x-1),j:j+(x-1)).*a(1:x,1:x); %取出w1中从(i,j)开始的x行x列元素与模板相乘
+ k=histeq(uint8(m1));%对局部进行直方图均衡
+ y=double(k);
+ jubu_image(i,j)=y(4,4); %将均衡后中心点的像素值赋给原图对应点的元素，未被赋值的元素取原值
+ end
+end
+Picture=jubu_image(x+1:m-x,x+1:n-x);%均衡化后，取原图像大小
+Picture=uint8(Picture);
+figure(4)
+imshow(Picture);
+title('局部直方图均衡后的lena图像'); %显示均衡后的图象
+
+5.利用直方图对图像elain和woman进行分割；
+clear;
+[p,map]=imread('elain.bmp');
+[pcount,porix]=imhist(p);
+figure(1)
+imshow(p);
+title('elain.bmp的原图像');
+f=max(pcount);
+s=1:1:61;
+for i=200:1:256
+    s(i-199)=pcount(i);
+end
+sm=max(s);
+for i=1:1:256
+    if pcount(i)==f
+        maxf=i-1;
+        break
+    end
+end
+for i=200:1:256
+    if pcount(i)==sm
+        maxs=i-1;
+        break
+    end
+end
+a=0.1;b=0.9;
+th=maxs*a+maxf*b;
+[m,n]=size(p);
+d=zeros(m,n);
+for i=1:1:m
+    for j=1:1:n
+        if p(i,j)>th
+            d(i,j)=255;
+        else
+            d(i,j)=0;
+        end
+    end
+end
+figure(2)
+imshow(d);
+title('elain.bmp被分割后的图像');
+
+clear;
+[p,map]=imread('woman.bmp');
+[pcount,porix]=imhist(p);
+figure(3)
+imshow(p);
+title('woman.bmp的原图像');
+f=max(pcount);
+s=1:1:61;
+for i=200:1:256
+    s(i-199)=pcount(i);
+end
+sm=max(s);
+for i=1:1:256
+    if pcount(i)==f
+        maxf=i-1;
+        break
+    end
+end
+for i=200:1:256
+    if pcount(i)==sm
+        maxs=i-1;
+        break
+    end
+end
+a=0.01;b=0.99;
+th=maxs*a+maxf*b;
+[m,n]=size(p);
+d=zeros(m,n);
+for i=1:1:m
+    for j=1:1:n
+        if p(i,j)>th
+            d(i,j)=255;
+        else
+            d(i,j)=0;
+        end
+    end
+end
+figure(4)
+imshow(d);
+title('woman.bmp被分割后的图像');
